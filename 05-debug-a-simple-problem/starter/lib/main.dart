@@ -1,44 +1,39 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Calculator Lite'),
+      home: const MyHomePage(title: 'Calculator Lite'),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  TextEditingController _num1Controller;
-  TextEditingController _num2Controller;
+  final TextEditingController _num1Controller = TextEditingController();
+  final TextEditingController _num2Controller = TextEditingController();
 
-  String sum;
-
-  @override
-  void initState() {
-    super.initState();
-    _num1Controller = TextEditingController();
-    _num2Controller = TextEditingController();
-  }
+  String? sum;
 
   @override
   void dispose() {
@@ -61,31 +56,34 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
             TextField(
-              key: Key("txt_field_1"),
+              key: const Key('txt_field_1'),
               controller: _num1Controller,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: "Number 1",
+                labelText: 'Number 1',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
             ),
             TextField(
-              key: Key("txt_field_2"),
+              key: const Key('txt_field_2'),
               controller: _num2Controller,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: "Number 2",
+                labelText: 'Number 2',
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(16),
                 ),
               ),
             ),
-            FlatButton.icon(
-              icon: Icon(Icons.add),
-              label: Text("Add"),
-              color: Theme.of(context).primaryColor,
+            TextButton.icon(
+              icon: const Icon(Icons.add),
+              label: const Text('Add'),
+              style: TextButton.styleFrom(
+                backgroundColor: Theme.of(context).primaryColor,
+                primary: Colors.white,
+              ),
               onPressed: () {
                 setState(() {
                   sum = _num1Controller.text + _num2Controller.text;
