@@ -36,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _counter++;
     });
-    displayMessage('Last line');
+    displayMessage("Last line");
   }
 
   void displayMessage(String message) {

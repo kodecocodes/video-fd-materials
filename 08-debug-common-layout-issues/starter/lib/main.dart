@@ -30,12 +30,12 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Home'),
       ),
       body: Column(
-        children: <Widget>[
-          const CardItem(),
-          const SizedBox(height: 32),
-          const Tags(),
-          const SizedBox(height: 32),
-          const Trivia(
+        children: const <Widget>[
+          CardItem(),
+          SizedBox(height: 32),
+          Tags(),
+          SizedBox(height: 32),
+          Trivia(
             message:
                 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
           ),

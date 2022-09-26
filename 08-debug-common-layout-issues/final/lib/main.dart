@@ -93,13 +93,13 @@ class Tags extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: Wrap(
         spacing: 8,
-        children: <Widget>[
-          const Chip(label: Text('Entertainment')),
-          const Chip(label: Text('Music')),
-          const Chip(label: Text('Gossips')),
-          const Chip(label: Text('Trending')),
-          const Chip(label: Text('Hot')),
-          const Chip(label: Text('Pop')),
+        children: const <Widget>[
+          Chip(label: Text('Entertainment')),
+          Chip(label: Text('Music')),
+          Chip(label: Text('Gossips')),
+          Chip(label: Text('Trending')),
+          Chip(label: Text('Hot')),
+          Chip(label: Text('Pop')),
         ],
       ),
     );

@@ -1,7 +1,7 @@
 analyzer:
-  exclude: 
+  exclude:
     - build/**
-    - lib/**.g.dart  
+    - lib/**.g.dart
   strong-mode:
     implicit-casts: false
     implicit-dynamic: false
@@ -22,7 +22,8 @@ analyzer:
 
     #This is added as an error to make viewing code on the web easier
     lines_longer_than_80_chars: error
-    prefer_single_quotes: error
+    # prefer_single_quotes: error
+    prefer_single_quotes: ignore
 
 linter:
   rules:
